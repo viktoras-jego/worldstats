@@ -1,0 +1,184 @@
+body{
+  margin: 0;
+  background: url("../assets/photos/back2.gif");
+}
+.first-page{
+  //background: url("../assets/photos/field_s.gif");
+  background-position: center;
+  background-size: cover;
+}
+.page-container{
+  height: 100vh;
+}
+.center-block {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  height: 50%;
+  width: 100%;
+  left: 50%;
+  top: 45%;
+  transform-origin: center center;
+}
+
+.number-font{
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.title{
+  color: rgba(245, 245, 245, 0.9);
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  background-color: #00A99E;
+}
+
+.clock {
+  height: 200px;
+  width: 200px;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: 10px solid #67D2C8;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  .top {
+    position: absolute;
+    width: 3px;
+    height: 8px;
+    background: #262626;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .right {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background: #262626;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+  }
+  .bottom {
+    position: absolute;
+    width: 3px;
+    height: 8px;
+    background: #262626;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+  .left {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background: #262626;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+  }
+  .center {
+    height: 6px;
+    width: 6px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #262626;
+    border-radius: 100%;
+  }
+  .shadow {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    left: 60px;
+    top: 60px;
+    transform: rotate(135deg);
+    background: linear-gradient(transparent, rgba(#000, 0.1));
+  }
+  .hour {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    //animation: time 86400s infinite linear;
+    animation: time 30s infinite linear;
+    &:before {
+      position: absolute;
+      content: "";
+      background: #262626;
+      height: 60px;
+      width: 3px;
+      top: 30px;
+    }
+  }
+  .minute {
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    //animation: time 3600s infinite linear;
+    animation: time 10s infinite linear;
+    &:before {
+      position: absolute;
+      content: "";
+      background: #262626;
+      height: 40px;
+      width: 1px;
+      top: 50px;
+    }
+  }
+  .second {
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    //animation: time 60s infinite linear;
+    animation: time 5s infinite linear;
+    &:before {
+      position: absolute;
+      content: "";
+      background: #fd1111;
+      height: 45px;
+      width: 2px;
+      top: 45px;
+    }
+  }
+}
+
+@keyframes time {
+  to {
+    transform: rotate(360deg);
+  }
+}
