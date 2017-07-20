@@ -21,7 +21,10 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/fullpage.js/dist/jquery.fullpage.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -50,7 +53,9 @@
       "config": "./karma.conf.js"
     }
   },
-  "defaults": {
+  "defaults": {"serve": {
+    "port": 4201
+  },
     "styleExt": "css",
     "component": {}
   }
