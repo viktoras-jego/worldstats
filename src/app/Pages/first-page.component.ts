@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ViewChild, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
 import {TweenMax, TimelineMax, Back, Quad} from 'gsap';
 @Component({
     selector: 'app-first-page',
@@ -8,13 +8,15 @@ import {TweenMax, TimelineMax, Back, Quad} from 'gsap';
 })
 export class FirstPageComponent implements AfterViewInit {
 
+    @ViewChild('clock')clock: ElementRef;
 
     constructor() {
         const tl = new TimelineMax();
-        console.log(tl);
+
     }
 
     ngAfterViewInit(): void {
+        console.log(this.clock.nativeElement);
     }
 
 }
