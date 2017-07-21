@@ -1,14 +1,17 @@
 <div mnFullpage
-     [mnFullpageScrollingSpeed]="800"
+     #fullpage
+     [mnFullpageScrollingSpeed]="1000"
+     [mnFullpageNavigation]="true"
+     [mnFullpageNavigationPosition]="'right'"
 >
     <div class="section welcome-section fp-section fp-table">
         <div class="fp-tableCell test">
-            <app-first-page class="first-page"></app-first-page>
+            <app-first-page></app-first-page>
         </div>
     </div>
     <div class="section welcome-section fp-section fp-table">
         <div class="fp-tableCell">
-            2
+            <app-second-page></app-second-page>
         </div>
     </div>
     <div class="section welcome-section fp-section fp-table">

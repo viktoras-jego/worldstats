@@ -1,3 +1,10 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+:root{
+  --second-speed: 3s;
+  --minute-speed: 7s;
+  --hour-speed: 10s;
+}
 body{
   margin: 0;
   background: url("../assets/photos/back2.gif");
@@ -8,9 +15,36 @@ body{
   background-size: cover;
 }
 .page-container{
+  overflow: hidden;
+  position: relative;
   height: 100vh;
 }
+
 .center-block {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  height: 50%;
+  width: 100%;
+  left: 50%;
+  top: 45%;
+  transform-origin: center center;
+}
+.center-block1 {
+  position: relative;
+  height: 0;
+  padding-bottom: 30%;
+  justify-content: center;
+  text-align: center;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  left: 50%;
+  top: 45%;
+  transform-origin: center center;
+}
+
+.center-block2 {
   position: absolute;
   justify-content: center;
   text-align: center;
@@ -28,9 +62,10 @@ body{
 
 .title{
   color: rgba(245, 245, 245, 0.9);
-  font-size: 50px;
+  font-size: 2.7vw;
   font-weight: 700;
   font-family: 'Source Sans Pro', sans-serif;
+  opacity: 1;
 }
 
 
@@ -49,22 +84,22 @@ body {
 }
 
 .clock {
-  height: 200px;
-  width: 200px;
+  height: 12vw;
+  width: 12vw;
   background: white;
   box-sizing: border-box;
   border-radius: 100%;
-  border: 10px solid #67D2C8;
+  border: 0.5vw solid #67D2C8;
   position: absolute;
-  top: 20%;
+  top: 300%;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
   .top {
     position: absolute;
-    width: 3px;
-    height: 8px;
+    width: 0.2vw;
+    height: 0.5vw;
     background: #262626;
     left: 0;
     right: 0;
@@ -72,8 +107,8 @@ body {
   }
   .right {
     position: absolute;
-    width: 8px;
-    height: 3px;
+    width: 0.5vw;
+    height: 0.2vw;
     background: #262626;
     top: 0;
     bottom: 0;
@@ -82,8 +117,8 @@ body {
   }
   .bottom {
     position: absolute;
-    width: 3px;
-    height: 8px;
+    width: 0.2vw;
+    height: 0.5vw;
     background: #262626;
     left: 0;
     right: 0;
@@ -92,17 +127,17 @@ body {
   }
   .left {
     position: absolute;
-    width: 8px;
-    height: 3px;
-    background: #262626;
+    width: 0.5vw;
+    height: 0.2vw;
+    background: #000000;
     top: 0;
     bottom: 0;
     left: 0;
     margin: auto 0;
   }
   .center {
-    height: 6px;
-    width: 6px;
+    width: 0.3vw;
+    height: 0.3vw;
     position: absolute;
     left: 0;
     right: 0;
@@ -111,68 +146,70 @@ body {
     margin: auto;
     background: #262626;
     border-radius: 100%;
+    z-index: 1000;
   }
   .shadow {
-    height: 200px;
-    width: 200px;
+    height: 10vw;
+    width: 10vw;
     position: absolute;
     left: 60px;
     top: 60px;
     transform: rotate(135deg);
-    background: linear-gradient(transparent, rgba(#000, 0.1));
   }
   .hour {
+    width: 3px;
+    height: 100%;
+    position: absolute;
+    left: -1%;
+    right: 0;
+    margin: 0 auto;
+    //animation: time 86400s infinite linear;
+    animation: time var(--hour-speed) infinite linear;
+    &:before {
+      position: absolute;
+      content: "";
+      background: #262626;
+      height: 2.6vw;
+      width: 3px;
+      top: 3vw;
+    }
+  }
+  .minute {
     width: 3px;
     height: 100%;
     position: absolute;
     left: 0;
     right: 0;
     margin: 0 auto;
-    //animation: time 86400s infinite linear;
-    animation: time 30s infinite linear;
+    //animation: time 60s infinite linear;
+    animation: time var(--minute-speed) infinite linear;
     &:before {
       position: absolute;
       content: "";
       background: #262626;
-      height: 60px;
-      width: 3px;
-      top: 30px;
+      height: 3.65vw;
+      width: 2px;
+      top: 1.9vw;
     }
   }
-  .minute {
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    //animation: time 3600s infinite linear;
-    animation: time 10s infinite linear;
-    &:before {
-      position: absolute;
-      content: "";
-      background: #262626;
-      height: 40px;
-      width: 1px;
-      top: 50px;
-    }
-  }
+
   .second {
-    width: 2px;
+    width: 3px;
     height: 100%;
     position: absolute;
-    left: 0;
+    left: -0;
     right: 0;
     margin: 0 auto;
     //animation: time 60s infinite linear;
-    animation: time 5s infinite linear;
+    animation: time var(--second-speed) infinite linear;
     &:before {
       position: absolute;
       content: "";
       background: #fd1111;
-      height: 45px;
+      height: 2.9vw;
       width: 2px;
-      top: 45px;
+      top: 2.7vw;
+      left: 0;
     }
   }
 }
@@ -181,4 +218,50 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.cursor{
+  color: rgba(245, 245, 245, 0.670);
+  font-size: calc(18px + 3vw);
+}
+.section_scroll{
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  color: #ffffff;
+  /* Absolute Position Center */
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 100%;
+  /* Floating Animation */
+  -webkit-animation-name: Floatingx;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -moz-animation-name: Floating;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out;
+}
+.section_scroll:hover{color: #ffffff;}
+a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
+
+@-webkit-keyframes Floatingx{
+  from {-webkit-transform:translate(-50%, 0px);}
+  50% {-webkit-transform:translate(-50%, 20px);}
+  to {-webkit-transform: translate(-50%, -0px);    }
+}
+
+@-moz-keyframes Floating{
+  from {-moz-transform:translate(-50%, 0px);}
+  50% {-moz-transform:translate(-50%, 20px);}
+  to {-moz-transform: translate(-50%, -0px);}
 }
