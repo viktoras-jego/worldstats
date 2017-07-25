@@ -34,7 +34,7 @@ body{
 .center-block1 {
   position: relative;
   height: 0;
-  padding-bottom: 30%;
+  padding-bottom: 24%;
   justify-content: center;
   text-align: center;
   transform: translate(-50%,-50%);
@@ -220,13 +220,12 @@ body {
   }
 }
 
-
-
 .cursor{
   color: rgba(245, 245, 245, 0.670);
   font-size: calc(18px + 3vw);
 }
 .section_scroll{
+  cursor: pointer;
   position: absolute;
   bottom: 50px;
   left: 50%;

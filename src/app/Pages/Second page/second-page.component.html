@@ -1,8 +1,12 @@
-<div style="text-align: center" class="page-container">
-    <div style="border: solid 1px whitesmoke" class="center-block2">
-
+<div style="text-align: center" class="page-container" (window:resize)="screenChanged()">
+    <div class="center-block1">
+        <border-line></border-line>
+        <div>
+            <div style="color: white" counto [step]="10" [countTo]="10" [countFrom]="1" [duration]="cnt" (countoChange)="counto = $event">{{counto | currency:'EUR':true:'1.2-2'}}</div>
+        </div>
+        <bot-border-line></bot-border-line>
     </div>
     <div #cursor class="cursor-parent">
-        <a class="section_scroll scroll" href="#"><i class="fa fa-angle-down cursor fa-4x"></i></a>
+        <a (click)="goDown()" class="section_scroll scroll"><i class="fa fa-angle-down cursor fa-4x"></i></a>
     </div>
 </div>
