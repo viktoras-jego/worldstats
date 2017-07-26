@@ -16,9 +16,25 @@ export class SecondPageComponent implements AfterViewInit {
 
     @ViewChild('cursor')cursor: ElementRef;
     screenTest = true;
-    public cnt = 0.7;
+    public duration = 0.3;
 
-    constructor(private a: MnFullpageService, private cdRef: ChangeDetectorRef, public counto: CountoModule) {
+    public from = 0;
+    public coalFrom = 0;
+    public goldFrom = 0;
+
+    public perSecond = 1246.19482;
+    public coalPerSecond = 244.01953;
+    public goldPerSecond = 0.000085616438;
+
+    public to = this.perSecond;
+    public coalTo = this.coalPerSecond;
+    public goldTo = this.goldPerSecond;
+
+    constructor(private a: MnFullpageService,
+                private cdRef: ChangeDetectorRef,
+                public counto: CountoModule,
+                public counto2: CountoModule,
+                public counto3: CountoModule) {
         const tl = new TimelineMax();
 
     }
@@ -37,6 +53,16 @@ export class SecondPageComponent implements AfterViewInit {
 
     goDown(): void {
         this.a.moveSectionDown();
+    }
+    changeCounter(): void {
+        setTimeout(() => {
+            this.from = this.to;
+            this.to += this.perSecond;
+            this.coalFrom = this.coalTo;
+            this.coalTo += this.coalPerSecond;
+            this.goldFrom = this.goldTo;
+            this.goldTo += this.goldPerSecond;
+        }, 700);
     }
 
 }

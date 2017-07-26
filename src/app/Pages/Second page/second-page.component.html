@@ -2,7 +2,34 @@
     <div class="center-block1">
         <border-line></border-line>
         <div>
-            <div style="color: white" counto [step]="10" [countTo]="10" [countFrom]="1" [duration]="cnt" (countoChange)="counto = $event">{{counto | currency:'EUR':true:'1.2-2'}}</div>
+            <div #general style="color: white; font-size: 23px"
+                 counto [step]="13"
+                 [countTo]="to"
+                 [countFrom]="from"
+                 [duration]="duration"
+                 (countoChange)="counto = $event"
+                 (countoEnd)="changeCounter();"
+            >
+                {{counto | number: '1.0-0'}}
+            </div>
+            <div #coal style="color: white; font-size: 23px"
+                 counto [step]="13"
+                 [countTo]="coalTo"
+                 [countFrom]="coalFrom"
+                 [duration]="duration"
+                 (countoChange)="counto2 = $event"
+            >
+                {{counto2 | number: '1.0-0'}}
+            </div>
+            <div #coal style="color: white; font-size: 23px"
+                 counto [step]="13"
+                 [countTo]="goldTo"
+                 [countFrom]="goldFrom"
+                 [duration]="duration"
+                 (countoChange)="counto3 = $event"
+            >
+                {{counto3 | number: '1.1-5'}}
+            </div>
         </div>
         <bot-border-line></bot-border-line>
     </div>
