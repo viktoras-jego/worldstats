@@ -1,7 +1,30 @@
 <div style="text-align: center" class="page-container" (window:resize)="screenChanged()">
-    <div class="center-block1">
+
+    <div class="center-block1" style="padding-bottom: 28%">
+        <div style="color: white">
+            text
+        </div>
         <border-line></border-line>
-        <div>
+        <div class="item-box">
+            <div style="border: 1px solid red" class="item-title">
+s
+            </div>
+            <div style="border: 1px solid red" class="item-content">
+                <div #coal style="color: white; font-size: 23px"
+                     counto [step]="13"
+                     [countTo]="coalTo"
+                     [countFrom]="coalFrom"
+                     [duration]="duration"
+                     (countoChange)="counto2 = $event"
+                >
+                    {{counto2 | number: '1.0-0'}}
+                </div>
+            </div>
+            <div style="border: 1px solid red" class="item-measurements">
+s
+            </div>
+        </div>
+        <!--<div>
             <div #general style="color: white; font-size: 23px"
                  counto [step]="13"
                  [countTo]="to"
@@ -21,16 +44,25 @@
             >
                 {{counto2 | number: '1.0-0'}}
             </div>
-            <div #coal style="color: white; font-size: 23px"
-                 counto [step]="13"
+            <div #gold style="color: white; font-size: 23px"
+                 counto [step]="5"
                  [countTo]="goldTo"
                  [countFrom]="goldFrom"
                  [duration]="duration"
                  (countoChange)="counto3 = $event"
             >
-                {{counto3 | number: '1.1-5'}}
+                {{counto3 | number: '1.3-3'}}
             </div>
-        </div>
+            <div #steel style="color: white; font-size: 23px"
+                 counto [step]="13"
+                 [countTo]="steelTo"
+                 [countFrom]="steelFrom"
+                 [duration]="duration"
+                 (countoChange)="counto4 = $event"
+            >
+                {{counto4 | number: '1.0-0'}}
+            </div>
+        </div> -->
         <bot-border-line></bot-border-line>
     </div>
     <div #cursor class="cursor-parent">

@@ -9,6 +9,11 @@ body{
   margin: 0;
   background: url("../assets/photos/back2.gif");
 }
+.pull-bottom{
+  position: absolute;
+  bottom: 60%;
+  width: 100%
+}
 .first-page{
   //background: url("../assets/photos/field_s.gif");
   background-position: center;
@@ -263,4 +268,22 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
   from {-moz-transform:translate(-50%, 0px);}
   50% {-moz-transform:translate(-50%, 20px);}
   to {-moz-transform: translate(-50%, -0px);}
+}
+
+.item-box{
+  height: 82%;
+  top: 15%;
+  position: absolute;
+}
+
+.item-title{
+  height: 20%;
+}
+
+.item-content{
+  height: 60%;
+}
+
+.item-measurements{
+  height: 20%;
 }
