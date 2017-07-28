@@ -277,14 +277,37 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
   padding-bottom: 28%;
 }
 
-.item-title{
-  height: 20%;
+.item-top{
+  display: flex;
+  flex: 4;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
-.item-content{
-  height: 60%;
+.item-mid{
+  display: flex;
+  flex: calc((100vw * .17 ));
+  flex-direction: row;
 }
 
-.item-measurements{
-  height: 20%;
+.content-item{
+  display: flex;
+  flex: 3;
+}
+
+.item-bot{
+  display: flex;
+  flex: 4;
+}
+
+.responsive-table{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+}
+.header-title{
+  font-family: 'EB Garamond', serif;
+  font-size: calc(10px + (6vw * .35));
 }

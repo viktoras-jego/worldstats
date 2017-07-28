@@ -7,7 +7,9 @@ import { MnFullpageService } from 'ngx-fullpage';
   styleUrls: ['./base.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class AppComponent implements AfterViewInit{
+export class AppComponent implements AfterViewInit {
+
+  public timer = 0;
 
   @ViewChild('fullpage')fullpage: ElementRef;
 
@@ -20,6 +22,9 @@ export class AppComponent implements AfterViewInit{
     /*setTimeout(() => {
       this.a.moveSectionDown();
     }, 5100);*/
+    setTimeout(() => {
+      this.timer = 2;
+    }, 1500);
   }
 
   disableZoom(): void {

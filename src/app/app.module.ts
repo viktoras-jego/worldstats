@@ -8,6 +8,7 @@ import { BorderLineComponent } from './Shared/border-line.component';
 import { BotBorderLineComponent } from './Shared/bot-border-line.component';
 import { CountoModule } from 'angular2-counto';
 import { MnFullpageModule } from 'ngx-fullpage';
+import { SimpleTimer } from 'ng2-simple-timer';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { MnFullpageModule } from 'ngx-fullpage';
     MnFullpageModule.forRoot(),
     CountoModule
   ],
-  providers: [],
+  providers: [SimpleTimer],
   bootstrap: [
     AppComponent,
     FirstPageComponent,

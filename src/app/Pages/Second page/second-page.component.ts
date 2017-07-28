@@ -1,5 +1,5 @@
 import {
-    AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, OnChanges, SimpleChanges, ViewChild,
+    AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, SimpleChanges, ViewChild,
     ViewEncapsulation
 } from '@angular/core';
 import { TimelineMax, Back, Power2 } from 'gsap';
@@ -12,9 +12,8 @@ import { CountoModule } from 'angular2-counto';
     styleUrls: ['../../base.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class SecondPageComponent implements AfterViewInit {
+export class SecondPageComponent implements AfterViewInit, OnChanges{
 
-    @ViewChild('cursor')cursor: ElementRef;
     screenTest = true;
     public duration = 0.3;
 
@@ -33,6 +32,8 @@ export class SecondPageComponent implements AfterViewInit {
     public goldTo = this.goldPerSecond;
     public steelTo = this.steelPerSecond;
 
+    @Input('timer')timer;
+
     constructor(private a: MnFullpageService,
                 private cdRef: ChangeDetectorRef,
                 public counto: CountoModule,
@@ -40,15 +41,16 @@ export class SecondPageComponent implements AfterViewInit {
                 public counto3: CountoModule,
                 public counto4: CountoModule) {
         const tl = new TimelineMax();
-
     }
 
     ngAfterViewInit(): void {
         const tl = new TimelineMax({delay: 1, repeat: -1});
-        const cursor = this.cursor.nativeElement;
         this.screenTest = false;
         this.cdRef.detectChanges();
 
+    }
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log(this.timer);
     }
 
     screenChanged(): void {

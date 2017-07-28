@@ -1,53 +1,18 @@
 <div style="text-align: center" class="page-container" (window:resize)="screenChanged()">
 
-    <div class="center-block1" style="padding-bottom: 28%">
-        <div style="color: white">
-            text
+    <div class="responsive-table">
+        <!--<border-line style="height: 10px"></border-line>
+        <bot-border-line></bot-border-line>-->
+        <div class="item-top">
+            <div class="header-title">The world's mined resources in</div>
+            <border-line></border-line>
         </div>
-        <border-line></border-line>
-        <div style="border: 1px #95ff70 solid; color: white" class="item-box">
-            random text
+        <div class="item-mid">
+
         </div>
-        <!--<div>
-            <div #general style="color: white; font-size: 23px"
-                 counto [step]="13"
-                 [countTo]="to"
-                 [countFrom]="from"
-                 [duration]="duration"
-                 (countoChange)="counto = $event"
-                 (countoEnd)="changeCounter();"
-            >
-                {{counto | number: '1.0-0'}}
-            </div>
-            <div #coal style="color: white; font-size: 23px"
-                 counto [step]="13"
-                 [countTo]="coalTo"
-                 [countFrom]="coalFrom"
-                 [duration]="duration"
-                 (countoChange)="counto2 = $event"
-            >
-                {{counto2 | number: '1.0-0'}}
-            </div>
-            <div #gold style="color: white; font-size: 23px"
-                 counto [step]="5"
-                 [countTo]="goldTo"
-                 [countFrom]="goldFrom"
-                 [duration]="duration"
-                 (countoChange)="counto3 = $event"
-            >
-                {{counto3 | number: '1.3-3'}}
-            </div>
-            <div #steel style="color: white; font-size: 23px"
-                 counto [step]="13"
-                 [countTo]="steelTo"
-                 [countFrom]="steelFrom"
-                 [duration]="duration"
-                 (countoChange)="counto4 = $event"
-            >
-                {{counto4 | number: '1.0-0'}}
-            </div>
-        </div> -->
-        <bot-border-line></bot-border-line>
+        <div class="item-bot">
+            <bot-border-line></bot-border-line>
+        </div>
     </div>
     <div #cursor class="cursor-parent">
         <a (click)="goDown()" class="section_scroll scroll"><i class="fa fa-angle-down cursor fa-4x"></i></a>
