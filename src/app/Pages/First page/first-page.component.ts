@@ -3,7 +3,7 @@ import { TimelineMax, Back } from 'gsap';
 
 @Component({
     selector: 'app-first-page',
-    templateUrl: './first-page.component.html',
+    templateUrl: './first-page.template.html',
     styleUrls: ['../../base.scss'],
     encapsulation: ViewEncapsulation.None
 })
@@ -29,7 +29,7 @@ export class FirstPageComponent implements AfterViewInit {
         });
 
         tl2.from(clock, 0.2, {
-            delay: 0.4,
+            delay: 0.1,
             visibility: 'hidden'
         });
 

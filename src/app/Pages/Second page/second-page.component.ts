@@ -1,5 +1,6 @@
 import {
-    AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, SimpleChanges, ViewChild,
+    AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges,
+    ViewChild,
     ViewEncapsulation
 } from '@angular/core';
 import { TimelineMax, Back, Power2 } from 'gsap';
@@ -8,11 +9,11 @@ import { CountoModule } from 'angular2-counto';
 
 @Component({
     selector: 'app-second-page',
-    templateUrl: './second-page.component.html',
+    templateUrl: './second-page.template.html',
     styleUrls: ['../../base.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class SecondPageComponent implements AfterViewInit, OnChanges{
+export class SecondPageComponent implements AfterViewInit {
 
     screenTest = true;
     public duration = 0.3;
@@ -20,7 +21,6 @@ export class SecondPageComponent implements AfterViewInit, OnChanges{
     public from = 0;
     public coalFrom = 0;
     public goldFrom = 0;
-    public steelFrom = 0;
 
     public perSecond = 1246.19482;
     public coalPerSecond = 244.01953;
@@ -30,27 +30,23 @@ export class SecondPageComponent implements AfterViewInit, OnChanges{
     public to = this.perSecond;
     public coalTo = this.coalPerSecond;
     public goldTo = this.goldPerSecond;
-    public steelTo = this.steelPerSecond;
 
-    @Input('timer')timer;
+    public seconds: number = 0;
+    public minutes: number = 0;
+
+    public timer = 0;
 
     constructor(private a: MnFullpageService,
                 private cdRef: ChangeDetectorRef,
                 public counto: CountoModule,
                 public counto2: CountoModule,
                 public counto3: CountoModule,
-                public counto4: CountoModule) {
-        const tl = new TimelineMax();
-    }
+                public counto4: CountoModule) {}
 
     ngAfterViewInit(): void {
         const tl = new TimelineMax({delay: 1, repeat: -1});
         this.screenTest = false;
         this.cdRef.detectChanges();
-
-    }
-    ngOnChanges(changes: SimpleChanges): void {
-        console.log(this.timer);
     }
 
     screenChanged(): void {
@@ -61,16 +57,18 @@ export class SecondPageComponent implements AfterViewInit, OnChanges{
         this.a.moveSectionDown();
     }
     changeCounter(): void {
-        setTimeout(() => {
-            this.from = this.to;
-            this.to += this.perSecond;
-            this.coalFrom = this.coalTo;
-            this.coalTo += this.coalPerSecond;
-            this.goldFrom = this.goldTo;
-            this.goldTo += this.goldPerSecond;
-            this.steelFrom = this.steelTo;
-            this.steelTo += this.steelPerSecond;
-        }, 700);
+            setTimeout(() => {
+                this.timer ++;
+                this.seconds = this.timer % 60;
+                this.minutes = Math.floor(this.timer / 60);
+
+                this.from = this.to;
+                this.to += this.perSecond;
+                this.coalFrom = this.coalTo;
+                this.coalTo += this.coalPerSecond;
+                this.goldFrom = this.goldTo;
+                this.goldTo += this.goldPerSecond;
+            }, 670);
     }
 
 }

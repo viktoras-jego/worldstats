@@ -9,7 +9,7 @@ import { MnFullpageService } from 'ngx-fullpage';
 })
 export class AppComponent implements AfterViewInit {
 
-  public timer = 0;
+  private scrolled: boolean = false;
 
   @ViewChild('fullpage')fullpage: ElementRef;
 
@@ -18,14 +18,13 @@ export class AppComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.disableZoom();
-    this.a.moveSectionDown();
+    this.a.moveTo(3);
     /*setTimeout(() => {
-      this.a.moveSectionDown();
-    }, 5100);*/
-    setTimeout(() => {
-      this.timer = 2;
-    }, 1500);
+      this.moveDown();
+    }, 4800);
+    this.checkIfScrolled();*/
   }
+
 
   disableZoom(): void {
     $(document).keydown(function(event) {
@@ -42,11 +41,23 @@ export class AppComponent implements AfterViewInit {
         // 61 Plus key  +/=
       }
     });
-
     $(window).bind('mousewheel DOMMouseScroll', function (event) {
       if (event.ctrlKey === true) {
         event.preventDefault();
       }
     });
   }
+
+  moveDown(): void {
+    if (!this.scrolled) {
+      this.a.moveTo(2);
+    }
+  }
+
+  checkIfScrolled(): void {
+    window.onwheel = (e) => {
+      this.scrolled = true;
+    };
+  }
+
 }

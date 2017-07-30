@@ -1,9 +1,9 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.css";
 :root{
-  --second-speed: 3s;
+  --second-speed: 2s;
   --minute-speed: 7s;
-  --hour-speed: 10s;
+  --hour-speed: 20s;
 }
 body{
   margin: 0;
@@ -67,7 +67,7 @@ body{
 
 .title{
   color: rgba(245, 245, 245, 0.9);
-  font-size: 2.7vw;
+  font-size: calc(18px + 3vw);
   font-weight: 700;
   font-family: 'Source Sans Pro', sans-serif;
   opacity: 1;
@@ -96,7 +96,7 @@ body {
   border-radius: 100%;
   border: 0.5vw solid #67D2C8;
   position: absolute;
-  top: 300%;
+  top: 500%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -141,8 +141,8 @@ body {
     margin: auto 0;
   }
   .center {
-    width: 0.3vw;
-    height: 0.3vw;
+    width: 0.4vw;
+    height: 0.4vw;
     position: absolute;
     left: 0;
     right: 0;
@@ -165,7 +165,7 @@ body {
     width: 3px;
     height: 100%;
     position: absolute;
-    left: -1%;
+    left: 0;
     right: 0;
     margin: 0 auto;
     //animation: time 86400s infinite linear;
@@ -270,6 +270,15 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
   to {-moz-transform: translate(-50%, -0px);}
 }
 
+//********************************************
+//  FLEX BODIES
+//********************************************
+.responsive-table{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+}
 .item-box{
   height: 100%;
   position: absolute;
@@ -279,35 +288,95 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
 
 .item-top{
   display: flex;
-  flex: 4;
+  flex: 5.5;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
 }
-
 .item-mid{
   display: flex;
-  flex: calc((100vw * .17 ));
+  flex: calc((135vw * .10 ));
   flex-direction: row;
 }
-
-.content-item{
-  display: flex;
-  flex: 3;
-}
-
 .item-bot{
   display: flex;
-  flex: 4;
+  flex: 5.4;
 }
 
-.responsive-table{
+//********************************************
+//  MIDDLE CONTENT
+//********************************************
+.content-item{
   display: flex;
+  flex: 10;
   flex-direction: column;
-  height: 100%;
-  color: white;
 }
+.content-top{
+  flex: 2.5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.content-mid{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 3.5;
+}
+.content-bot{
+  flex: 3;
+  align-items: flex-start;
+  justify-content: center;
+}
+.content-title{
+  font-family: 'Lora', serif;
+  font-size: calc(3px + (5vw * .35));
+}
+.content-center{
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 700;
+  letter-spacing: .4vw;
+  color: white;
+  font-size: calc(12px + 4.6vw);
+}
+.content-measure{
+  font-family: 'Cabin Condensed', sans-serif;
+  color: white;
+  font-size: calc(1px + 4.6vw);
+}
+.color1 {
+  color: #1599b7;
+}
+.color2 {
+  color: #f9daa4;
+}
+.color3 {
+  color: #ff4c3e;
+}
+//********************************************
+//  EXTRA
+//********************************************
+
+.break-space{
+  flex: 1;
+  display: flex;
+}
+.break-space2x{
+  flex: 2;
+  display: flex;
+}
+
 .header-title{
-  font-family: 'EB Garamond', serif;
-  font-size: calc(10px + (6vw * .35));
+  font-family: 'Lora', serif;
+  font-size: calc(3px + (5vw * .35));
+  margin-bottom: 20px;
+  width: 100%;
+}
+.time{
+  position: relative;
+  display: inline-block;
+  min-width: 1.7%;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  font-size: calc(1px + 2.1vw);
 }

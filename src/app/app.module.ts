@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FirstPageComponent } from './Pages/First page/first-page.component';
 import { SecondPageComponent } from './Pages/Second page/second-page.component';
+import { ThirdPageComponent } from './Pages/Third page/third-page.component';
 import { BorderLineComponent } from './Shared/border-line.component';
 import { BotBorderLineComponent } from './Shared/bot-border-line.component';
 import { CountoModule } from 'angular2-counto';
@@ -15,6 +16,7 @@ import { SimpleTimer } from 'ng2-simple-timer';
     AppComponent,
     FirstPageComponent,
     SecondPageComponent,
+    ThirdPageComponent,
     BorderLineComponent,
     BotBorderLineComponent,
   ],
@@ -28,6 +30,7 @@ import { SimpleTimer } from 'ng2-simple-timer';
     AppComponent,
     FirstPageComponent,
     SecondPageComponent,
+    ThirdPageComponent,
     BorderLineComponent,
     BotBorderLineComponent,
   ]
