@@ -39,44 +39,4 @@ Resources:
 8. Global food waste & the effects: EStimated annual waste totals
 9. Credits
 
- <!--<div>
-             <div #general style="color: white; font-size: 23px"
-                  counto [step]="13"
-                  [countTo]="to"
-                  [countFrom]="from"
-                  [duration]="duration"
-                  (countoChange)="counto = $event"
-                  (countoEnd)="changeCounter();"
-             >
-                 {{counto | number: '1.0-0'}}
-             </div>
-             <div #coal style="color: white; font-size: 23px"
-                  counto [step]="13"
-                  [countTo]="coalTo"
-                  [countFrom]="coalFrom"
-                  [duration]="duration"
-                  (countoChange)="counto2 = $event"
-             >
-                 {{counto2 | number: '1.0-0'}}
-             </div>
-             <div #gold style="color: white; font-size: 23px"
-                  counto [step]="5"
-                  [countTo]="goldTo"
-                  [countFrom]="goldFrom"
-                  [duration]="duration"
-                  (countoChange)="counto3 = $event"
-             >
-                 {{counto3 | number: '1.3-3'}}
-             </div>
-             <div #steel style="color: white; font-size: 23px"
-                  counto [step]="13"
-                  [countTo]="steelTo"
-                  [countFrom]="steelFrom"
-                  [duration]="duration"
-                  (countoChange)="counto4 = $event"
-             >
-                 {{counto4 | number: '1.0-0'}}
-             </div>
-         </div> -->
-
 
