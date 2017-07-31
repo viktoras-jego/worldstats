@@ -326,13 +326,13 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
 .content-top{
   flex: 2.5;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 .content-top-small{
   flex: 2;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 .content-mid{
@@ -422,4 +422,15 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 600;
   font-size: calc(1px + 2.1vw);
+}
+
+//********************************************
+//  FORTH PAGE
+//********************************************
+.forth-page{
+  background: url("../assets/photos/Hills.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }

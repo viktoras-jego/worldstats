@@ -18,7 +18,7 @@ export class AppComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.disableZoom();
-    this.a.moveTo(3);
+    this.a.moveTo(4);
     /*setTimeout(() => {
       this.moveDown();
     }, 4800);
