@@ -9,7 +9,13 @@
                 <div style="display: inline" *ngIf="minutes === 1">
                     <div class="time">{{minutes}}</div> minute,
                 </div>
-                <div class="time">{{seconds}}</div> seconds</div>
+                <div style="display: inline" *ngIf="seconds === 1">
+                    <div class="time">{{seconds}}</div> second
+                </div>
+                <div style="display: inline" *ngIf="seconds > 1">
+                    <div class="time">{{seconds}}</div> seconds
+                </div>
+            </div>
             <border-line></border-line>
         </div>
 

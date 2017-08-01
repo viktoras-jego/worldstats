@@ -9,6 +9,19 @@ body{
   margin: 0;
   background: url("../assets/photos/back2.gif");
 }
+*{
+  cursor: default;
+  .scroll, i, .section_scroll{
+    cursor: pointer;
+  }
+}
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
 .pull-bottom{
   position: absolute;
   bottom: 60%;
@@ -428,9 +441,63 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
 //  FORTH PAGE
 //********************************************
 .forth-page{
-  background: url("../assets/photos/Hills.jpg");
-  background-position: center;
-  background-size: cover;
+  background: url("../assets/photos/small_steps.png");
   height: 100%;
   width: 100%;
 }
+
+.flex-container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+//***************
+//  RUND BOX
+//***************
+.round-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.91);
+  height: calc(120px + 26vw);
+  width: calc(120px + 26vw);
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+.box-title {
+  display: flex;
+  width: 80%;
+  flex: 6;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+}
+.box-break {
+  width: 100%;
+  flex: .4;
+  overflow: hidden;
+}
+.box-timer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 80%;
+  flex: 6;
+}
+.box-timer-top{
+  flex: 1.7;
+  align-items: flex-start;
+  justify-content: center;
+}
+.box-timer-bot {
+  flex: 1.7;
+  align-items: flex-start;
+  justify-content: center;
+}
+//***************
+//  RUND BOX END
+//***************

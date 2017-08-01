@@ -8,12 +8,12 @@ import { MnFullpageService } from 'ngx-fullpage';
 import { CountoModule } from 'angular2-counto';
 
 @Component({
-    selector: 'app-forth-page',
-    templateUrl: './forth-page.template.html',
+    selector: 'app-fifth-page',
+    templateUrl: './fifth-page.template.html',
     styleUrls: ['../../base.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class ForthPageComponent implements AfterViewInit {
+export class FifthPageComponent implements AfterViewInit {
 
     public seconds: number = 0;
     public minutes: number = 0;
