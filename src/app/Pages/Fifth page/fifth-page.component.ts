@@ -30,7 +30,7 @@ export class FifthPageComponent implements AfterViewInit {
     constructor(private a: MnFullpageService,
                 private cdRef: ChangeDetectorRef,
                 public counto: CountoModule,
-                public counto2: CountoModule,) {}
+                public counto2: CountoModule) {}
 
     ngAfterViewInit(): void {
     }
