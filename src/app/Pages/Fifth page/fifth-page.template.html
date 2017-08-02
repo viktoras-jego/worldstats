@@ -1,0 +1,38 @@
+<div style="text-align: center" class="page-container">
+
+    <div class="responsive-table">
+        <div class="item-top">
+            <div class="slider-title">Global Undernourishment</div>
+            <border-line></border-line>
+        </div>
+
+        <!-- Middle component where content goes -->
+        <div class="item-mid slider-container">
+
+            <div #slide1 class="content-center color4 slide1">
+                test1
+            </div>
+            <div #slide2 class="content-center color5 slide2">
+                736,240,000
+            </div>
+            <div #slide3 class="content-center color2 slide3">
+                test3
+            </div>
+
+            <div style="position: absolute; left: 93.3%" class="content-center">
+                <i (click)="moveRight()" class="fa fa-caret-right side-cursor fa-4x"></i>
+            </div>
+            <div style="position: absolute; left: 3.5%" class="content-center">
+                <i (click)="moveLeft()" class="fa fa-caret-left side-cursor fa-4x"></i>
+            </div>
+        </div>
+        <!-- Middle component END -->
+
+        <div class="item-bot">
+            <bot-border-line></bot-border-line>
+        </div>
+    </div>
+    <div #cursor class="cursor-parent">
+        <a (click)="goDown()" class="section_scroll scroll"><i class="fa fa-angle-down cursor fa-4x"></i></a>
+    </div>
+</div>

@@ -7,11 +7,14 @@ import { SecondPageComponent } from './Pages/Second page/second-page.component';
 import { ThirdPageComponent } from './Pages/Third page/third-page.component';
 import { ForthPageComponent } from './Pages/Forth page/forth-page.component';
 import { FifthPageComponent } from './Pages/Fifth page/fifth-page.component';
+
 import { BorderLineComponent } from './Shared/border-line.component';
 import { BotBorderLineComponent } from './Shared/bot-border-line.component';
+
 import { CountoModule } from 'angular2-counto';
 import { MnFullpageModule } from 'ngx-fullpage';
 import { SimpleTimer } from 'ng2-simple-timer';
+import { SlickModule } from 'ngx-slick';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,8 @@ import { SimpleTimer } from 'ng2-simple-timer';
   imports: [
     BrowserModule,
     MnFullpageModule.forRoot(),
-    CountoModule
+    CountoModule,
+    SlickModule.forRoot()
   ],
   providers: [SimpleTimer],
   bootstrap: [

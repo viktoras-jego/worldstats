@@ -12,10 +12,7 @@ export class FirstPageComponent implements AfterViewInit {
     @ViewChild('clock')clock: ElementRef;
     @ViewChild('title')title: ElementRef;
 
-    constructor() {
-        const tl = new TimelineMax();
-
-    }
+    constructor() {}
 
     ngAfterViewInit(): void {
         const tl = new TimelineMax({delay: 2.7});

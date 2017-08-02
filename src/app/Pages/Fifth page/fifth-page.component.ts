@@ -3,7 +3,7 @@ import {
     ViewChild,
     ViewEncapsulation
 } from '@angular/core';
-import { TimelineMax, Back, Power2 } from 'gsap';
+import { TimelineMax, Back, Power3 } from 'gsap';
 import { MnFullpageService } from 'ngx-fullpage';
 import { CountoModule } from 'angular2-counto';
 
@@ -15,37 +15,97 @@ import { CountoModule } from 'angular2-counto';
 })
 export class FifthPageComponent implements AfterViewInit {
 
-    public seconds: number = 0;
-    public minutes: number = 0;
-    public duration = 0.3;
+    @ViewChild('slide1')slideFirst: ElementRef;
+    @ViewChild('slide2')slideSecond: ElementRef;
+    @ViewChild('slide3')slideThird: ElementRef;
+    public slide1: any;
+    public slide2: any;
+    public slide3: any;
 
-    public landFrom = 0;
+    private inUse: boolean = false;
 
-    public landPerSecond = 44.3;
-
-    public landTo = this.landPerSecond;
-
-    public timer = 0;
-
-    constructor(private a: MnFullpageService,
-                private cdRef: ChangeDetectorRef,
-                public counto: CountoModule,
-                public counto2: CountoModule) {}
+    constructor(private a: MnFullpageService) {
+        const tl = new TimelineMax();
+    }
 
     ngAfterViewInit(): void {
+        this.slide1 = this.slideFirst.nativeElement;
+        this.slide2 = this.slideSecond.nativeElement;
+        this.slide3 = this.slideThird.nativeElement;
+    }
+
+    moveLeft(): void {
+        if (!this.inUse) {
+            this.inUse = true;
+            const tl = new TimelineMax();
+            const tl2 = new TimelineMax();
+            const tl3 = new TimelineMax();
+            tl.to(this.slide2, 2.2, {
+                ease: Power3.easeOut,
+                left: '150%'
+            });
+            tl2.to(this.slide1, 1.1, {
+                ease: Power3.easeOut,
+                left: '43.4%'
+            });
+            tl3.to(this.slide3, 0, {
+                left: '-63.2%'
+            });
+
+            this.switchElementsRight();
+
+            setTimeout(() => {
+                this.inUse = false;
+            }, 1100);
+        }
+    }
+
+    moveRight(): void {
+        if (!this.inUse) {
+            this.inUse = true;
+            const tl = new TimelineMax();
+            const tl2 = new TimelineMax();
+            const tl3 = new TimelineMax();
+            tl.to(this.slide3, 1.1, {
+                ease: Power3.easeOut,
+                left: '43.4%'
+            });
+            tl2.to(this.slide2, 2.2, {
+                ease: Power3.easeOut,
+                left: '-63.2%'
+            });
+            tl3.to(this.slide1, 0, {
+                ease: Power3.easeOut,
+                left: '150%'
+            });
+
+            this.switchElementsLeft();
+
+            setTimeout(() => {
+                this.inUse = false;
+            }, 1100);
+        }
+    }
+
+    switchElementsRight(): void {
+        const first = this.slide1;
+        const second = this.slide2;
+
+        this.slide1 = this.slide3;
+        this.slide2 = first;
+        this.slide3 = second;
+    }
+
+    switchElementsLeft(): void {
+        const first = this.slide1;
+        const third = this.slide3;
+
+        this.slide1 = this.slide2;
+        this.slide2 = third;
+        this.slide3 = first;
     }
 
     goDown(): void {
         this.a.moveSectionDown();
-    }
-    changeCounter(): void {
-        setTimeout(() => {
-            this.timer ++;
-            this.seconds = this.timer % 60;
-            this.minutes = Math.floor(this.timer / 60);
-
-            this.landFrom = this.landTo;
-            this.landTo += this.landPerSecond;
-        }, 670);
     }
 }

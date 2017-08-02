@@ -11,7 +11,7 @@ body{
 }
 *{
   cursor: default;
-  .scroll, i, .section_scroll{
+  .scroll, i, .section_scroll, .right-arrow{
     cursor: pointer;
   }
 }
@@ -242,6 +242,7 @@ body {
   color: rgba(245, 245, 245, 0.670);
   font-size: calc(18px + 3vw);
 }
+
 .section_scroll{
   cursor: pointer;
   position: absolute;
@@ -499,5 +500,54 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
   justify-content: center;
 }
 //***************
-//  RUND BOX END
+//  ROUND BOX END
 //***************
+//***********************************
+//  SLIDER ELEMENTS
+//***********************************
+.slider-container {
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.right-arrow {
+  cursor: pointer;
+  position: absolute;
+  left: 91%;
+  color: #ffffff;
+  /* Absolute Position Center */
+  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0%);
+  -moz-transform: translate(-50%, 0%);
+  -o-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%);
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 100%;
+}
+
+.side-cursor{
+  color: rgba(245, 245, 245, 0.670);
+  font-size: calc(25px + 5vw);
+}
+.slide1 {
+  position: absolute;
+  left: -63.2%;
+}
+.slide2 {
+  position: absolute;
+}
+.slide3 {
+  position: absolute;
+  left: 150%;
+}
+
+.slider-title {
+  margin-bottom: 17px;
+  font-family: 'Lora', serif;
+  font-size: calc(7px + (5vw * .35));
+}
+//*******************************
+//  SLIDER ELEMENTS END
+//*******************************
