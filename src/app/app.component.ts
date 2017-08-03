@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation} from '@angular/core';
+import {enableProdMode} from '@angular/core';
 import { MnFullpageService } from 'ngx-fullpage';
-
+enableProdMode();
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

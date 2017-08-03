@@ -188,6 +188,8 @@ body {
     right: 0;
     margin: 0 auto;
     //animation: time 86400s infinite linear;
+
+    -webkit-animation: time var(--hour-speed) infinite linear;
     animation: time var(--hour-speed) infinite linear;
     &:before {
       position: absolute;
@@ -206,6 +208,7 @@ body {
     right: 0;
     margin: 0 auto;
     //animation: time 60s infinite linear;
+    -webkit-animation: time var(--minute-speed) infinite linear;
     animation: time var(--minute-speed) infinite linear;
     &:before {
       position: absolute;
@@ -225,6 +228,7 @@ body {
     right: 0;
     margin: 0 auto;
     //animation: time 60s infinite linear;
+    -webkit-animation: time var(--second-speed) infinite linear;
     animation: time var(--second-speed) infinite linear;
     &:before {
       position: absolute;
@@ -592,6 +596,48 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
 }
 .slider-title-parent{
   margin-bottom: 5%
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .slider-title-parent{
+    margin-bottom: 20%
+  }
+  .people {
+    position: absolute;
+    margin-top: calc(60px + (20% - (15vw)));
+  }
+  .slide1 {
+    position: absolute;
+    margin-left: -160vw;
+  }
+  .slide2 {
+    position: absolute;
+  }
+  .slide3 {
+    position: absolute;
+    margin-left: 160vw;
+  }
+}
+
+@supports (-ms-ime-align:auto) {
+  .slider-title-parent{
+    margin-bottom: 20%
+  }
+  .people {
+    position: absolute;
+    margin-top: calc(60px + (20% - (15vw)));
+  }
+  .slide1 {
+    position: absolute;
+    margin-left: -160vw;
+  }
+  .slide2 {
+    position: absolute;
+  }
+  .slide3 {
+    position: absolute;
+    margin-left: 160vw;
+  }
 }
 
 @-moz-document url-prefix() {
