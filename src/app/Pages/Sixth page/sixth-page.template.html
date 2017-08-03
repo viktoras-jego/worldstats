@@ -1,0 +1,107 @@
+<div style="text-align: center" class="page-container">
+
+    <div class="responsive-table">
+        <div class="item-top">
+            <div class="header-title">The World's food in
+                <div style="display: inline" *ngIf="minutes > 1">
+                    <div class="time">{{minutes}}</div> minutes,
+                </div>
+                <div style="display: inline" *ngIf="minutes === 1">
+                    <div class="time">{{minutes}}</div> minute,
+                </div>
+                <div style="display: inline" *ngIf="seconds === 1">
+                    <div class="time">{{seconds}}</div> second
+                </div>
+                <div style="display: inline" *ngIf="seconds > 1">
+                    <div class="time">{{seconds}}</div> seconds
+                </div>
+            </div>
+            <border-line></border-line>
+        </div>
+
+        <!-- Middle component where content goes -->
+        <div class="item-mid">
+            <div class="break-space2x"></div>
+            <div class="content-item">
+                <div class="content-top content-title-small">
+                    Produced
+                </div>
+                <div class="content-mid">
+                    <div #goldWaste
+                         class="content-center color10"
+                         counto [step]="13"
+                         [countTo]="producedTo"
+                         [countFrom]="producedFrom"
+                         [duration]="duration"
+                         (countoEnd)="changeCounter();"
+                         (countoChange)="counto2 = $event"
+                    >
+                        {{counto2 | number: '1.0-0'}}
+                    </div>
+                </div>
+                <div class="content-bot-small content-measure">
+                    Tonnes
+                </div>
+            </div>
+            <div class="break-space">
+                <svg height="100%" width="100%">
+                    <line x1="50%" y1="19%" x2="50%" y2="81%" style="stroke:rgba(255,255,255,0.6);stroke-width:2"></line>
+                </svg>
+            </div>
+            <div class="content-item">
+                <div class="content-top content-title-small">
+                    Consumed
+                </div>
+                <div class="content-mid">
+                    <div #goldWaste
+                         class="content-center color11"
+                         counto [step]="13"
+                         [countTo]="consumedTo"
+                         [countFrom]="consumedFrom"
+                         [duration]="duration"
+                         (countoChange)="counto3 = $event"
+                    >
+                        {{counto3 | number: '1.0-0'}}
+                    </div>
+                </div>
+                <div class="content-bot-small content-measure">
+                    Tonnes
+                </div>
+            </div>
+            <div class="break-space">
+                <svg height="100%" width="100%">
+                    <line x1="50%" y1="15%" x2="50%" y2="85%" style="stroke:rgba(255,255,255,0.6);stroke-width:2"></line>
+                </svg>
+            </div>
+            <div class="content-item">
+                <div class="content-top content-title-small">
+                    Wasted
+                </div>
+                <div class="content-mid">
+                    <div #goldWaste
+                         class="content-center color12"
+                         counto [step]="13"
+                         [countTo]="wastedTo"
+                         [countFrom]="wastedFrom"
+                         [duration]="duration"
+                         (countoChange)="counto4 = $event"
+                    >
+                        {{counto4 | number: '1.0-0'}}
+                    </div>
+                </div>
+                <div class="content-bot-small content-measure">
+                    Tonnes
+                </div>
+            </div>
+            <div class="break-space2x"></div>
+        </div>
+        <!-- Middle component END -->
+
+        <div class="item-bot">
+            <bot-border-line></bot-border-line>
+        </div>
+    </div>
+    <div #cursor class="cursor-parent">
+        <a (click)="goDown()" class="section_scroll scroll"><i class="fa fa-angle-down cursor fa-4x"></i></a>
+    </div>
+</div>

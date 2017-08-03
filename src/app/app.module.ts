@@ -7,6 +7,8 @@ import { SecondPageComponent } from './Pages/Second page/second-page.component';
 import { ThirdPageComponent } from './Pages/Third page/third-page.component';
 import { ForthPageComponent } from './Pages/Forth page/forth-page.component';
 import { FifthPageComponent } from './Pages/Fifth page/fifth-page.component';
+import { SixthPageComponent } from './Pages/Sixth page/sixth-page.component';
+import { SeventhPageComponent } from './Pages/Seventh page/seventh-page.component';
 
 import { BorderLineComponent } from './Shared/border-line.component';
 import { BotBorderLineComponent } from './Shared/bot-border-line.component';
@@ -24,6 +26,8 @@ import { SlickModule } from 'ngx-slick';
     ThirdPageComponent,
     ForthPageComponent,
     FifthPageComponent,
+    SixthPageComponent,
+    SeventhPageComponent,
     BorderLineComponent,
     BotBorderLineComponent,
   ],
@@ -41,6 +45,8 @@ import { SlickModule } from 'ngx-slick';
     ThirdPageComponent,
     ForthPageComponent,
     FifthPageComponent,
+    SixthPageComponent,
+    SeventhPageComponent,
     BorderLineComponent,
     BotBorderLineComponent,
   ]

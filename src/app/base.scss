@@ -410,6 +410,24 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
 .color6 {
   color: #f0c30f;
 }
+.color7 {
+  color: rgb(56, 142, 60);
+}
+.color8 {
+  color: #c06c84;
+}
+.color9 {
+  color: #826991;
+}
+.color10 {
+  color: #3e50b4;
+}
+.color11 {
+  color: #e71e62;
+}
+.color12 {
+  color: #fde93b;
+}
 //********************************************
 //  EXTRA
 //********************************************
@@ -466,7 +484,7 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
   height: calc(120px + 26vw);
   width: calc(120px + 26vw);
   border-radius: 50%;
-  margin-bottom: 20px;
+  margin-bottom: 60px;
 }
 .box-title {
   display: flex;
@@ -533,21 +551,32 @@ a.section_scroll:focus, a:hover{color: #ffffff;outline: 0;}
 }
 .slide1 {
   position: absolute;
-  left: -63.2%;
+  margin-left: -80%;
 }
 .slide2 {
   position: absolute;
 }
 .slide3 {
   position: absolute;
-  left: 150%;
+  margin-left: 80%;
+}
+.people {
+  position: absolute;
+  margin-top: calc(14px + (20% - (15vw)));
+
 }
 
 .slider-title {
-  margin-bottom: 17px;
+  position: absolute;
   font-family: 'Lora', serif;
   font-size: calc(7px + (5vw * .35));
+  transform: translate(-50%);
 }
 //*******************************
 //  SLIDER ELEMENTS END
 //*******************************
+.seventh-page{
+  background: url("../assets/photos/small_steps.png");
+  height: 100%;
+  width: 100%;
+}
