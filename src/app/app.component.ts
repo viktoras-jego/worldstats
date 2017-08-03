@@ -18,11 +18,10 @@ export class AppComponent implements AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.disableZoom();
-    this.a.moveTo(9);
-    /*setTimeout(() => {
+    setTimeout(() => {
       this.moveDown();
     }, 4800);
-    this.checkIfScrolled();*/
+    this.checkIfScrolled();
   }
 
 
