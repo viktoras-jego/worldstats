@@ -1,8 +1,8 @@
-<div style="text-align: center" (keypress)="eventHandler($event)" class="page-container">
+<div style="text-align: center" class="page-container">
 
     <div class="responsive-table">
         <div class="item-top">
-            <div class="header-title">The World's food in
+            <div class="header-title">Agriculture resources used in
                 <div style="display: inline" *ngIf="minutes > 1">
                     <div class="time">{{minutes}}</div> minutes,
                 </div>
@@ -20,18 +20,17 @@
         </div>
 
         <!-- Middle component where content goes -->
-        <div class="item-mid">
+        <div class="item-mid-small2">
             <div class="break-space2x"></div>
             <div class="content-item">
-                <div class="content-top content-title-small">
-                    Produced
+                <div class="content-top content-title">
+                    Diesel
                 </div>
                 <div class="content-mid">
-                    <div #goldWaste
-                         class="content-center color10"
+                    <div class="content-center color13"
                          counto [step]="13"
-                         [countTo]="producedTo"
-                         [countFrom]="producedFrom"
+                         [countTo]="dieselTo"
+                         [countFrom]="dieselFrom"
                          [duration]="duration"
                          (countoEnd)="changeCounter();"
                          (countoChange)="counto2 = $event"
@@ -49,15 +48,14 @@
                 </svg>
             </div>
             <div class="content-item">
-                <div class="content-top content-title-small">
-                    Consumed
+                <div class="content-top content-title">
+                    Energy
                 </div>
                 <div class="content-mid">
-                    <div #goldWaste
-                         class="content-center color11"
+                    <div class="content-center color13"
                          counto [step]="13"
-                         [countTo]="consumedTo"
-                         [countFrom]="consumedFrom"
+                         [countTo]="energyTo"
+                         [countFrom]="energyFrom"
                          [duration]="duration"
                          (countoChange)="counto3 = $event"
                     >
@@ -65,7 +63,7 @@
                     </div>
                 </div>
                 <div class="content-bot-small content-measure">
-                    Tonnes
+                    Gigajoules
                 </div>
             </div>
             <div class="break-space">
@@ -74,19 +72,44 @@
                 </svg>
             </div>
             <div class="content-item">
-                <div class="content-top content-title-small">
-                    Wasted
+                <div class="content-top content-title">
+                    Fertilizer
                 </div>
                 <div class="content-mid">
-                    <div #goldWaste
-                         class="content-center color12"
+                    <div class="content-center color13"
                          counto [step]="13"
-                         [countTo]="wastedTo"
-                         [countFrom]="wastedFrom"
+                         [countTo]="fertilizerTo"
+                         [countFrom]="fertilizerFrom"
                          [duration]="duration"
                          (countoChange)="counto4 = $event"
                     >
                         {{counto4 | number: '1.0-0'}}
+                    </div>
+                </div>
+                <div class="content-bot-small content-measure">
+                    Tonnes
+                </div>
+            </div>
+            <div class="break-space2x"></div>
+        </div>
+        <div style="transform: translate(-50%)">
+            <bot-border-line></bot-border-line>
+        </div>
+        <div class="item-mid-small2">
+            <div class="break-space2x"></div>
+            <div class="content-item">
+                <div class="content-top content-title">
+                    Water
+                </div>
+                <div class="content-mid">
+                    <div class="content-center color14"
+                         counto [step]="13"
+                         [countTo]="waterTo"
+                         [countFrom]="waterFrom"
+                         [duration]="duration"
+                         (countoChange)="counto = $event"
+                    >
+                        {{counto | number: '1.0-0'}}
                     </div>
                 </div>
                 <div class="content-bot-small content-measure">

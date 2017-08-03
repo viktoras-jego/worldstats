@@ -9,6 +9,8 @@ import { ForthPageComponent } from './Pages/Forth page/forth-page.component';
 import { FifthPageComponent } from './Pages/Fifth page/fifth-page.component';
 import { SixthPageComponent } from './Pages/Sixth page/sixth-page.component';
 import { SeventhPageComponent } from './Pages/Seventh page/seventh-page.component';
+import { EightPageComponent } from './Pages/Eight page/eight-page.component';
+import { NinethPageComponent } from './Pages/Nineth page/nineth-page.component';
 
 import { BorderLineComponent } from './Shared/border-line.component';
 import { BotBorderLineComponent } from './Shared/bot-border-line.component';
@@ -28,6 +30,8 @@ import { SlickModule } from 'ngx-slick';
     FifthPageComponent,
     SixthPageComponent,
     SeventhPageComponent,
+    EightPageComponent,
+    NinethPageComponent,
     BorderLineComponent,
     BotBorderLineComponent,
   ],
@@ -47,6 +51,8 @@ import { SlickModule } from 'ngx-slick';
     FifthPageComponent,
     SixthPageComponent,
     SeventhPageComponent,
+    EightPageComponent,
+    NinethPageComponent,
     BorderLineComponent,
     BotBorderLineComponent,
   ]

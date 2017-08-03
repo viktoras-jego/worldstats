@@ -1,5 +1,6 @@
 import {
-    AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges,
+    AfterViewInit, ChangeDetectorRef, Component, DoCheck, ElementRef, HostListener, Input, OnChanges, OnInit,
+    SimpleChanges,
     ViewChild,
     ViewEncapsulation
 } from '@angular/core';
@@ -13,6 +14,7 @@ import { CountoModule } from 'angular2-counto';
     styleUrls: ['../../base.scss'],
     encapsulation: ViewEncapsulation.None
 })
+
 export class FifthPageComponent implements AfterViewInit {
 
     @ViewChild('slide1')slideFirst: ElementRef;
@@ -22,6 +24,7 @@ export class FifthPageComponent implements AfterViewInit {
     @ViewChild('secondText')secondText: ElementRef;
     @ViewChild('thirdText')thirdText: ElementRef;
     @ViewChild('people')people2: ElementRef;
+
 
     public slide1: any;
     public slide2: any;
@@ -59,11 +62,11 @@ export class FifthPageComponent implements AfterViewInit {
             const tl3 = new TimelineMax();
             tl.to(this.slide2, 2.2, {
                 ease: Power3.easeOut,
-                marginLeft: '-80%',
+                marginLeft: '-160vw',
             });
             tl2.to(this.slide1, 0, {
                 ease: Power3.easeOut,
-                marginLeft: '80%',
+                marginLeft: '160vw',
             });
             tl3.to(this.slide3, 1.1, {
                 ease: Power3.easeOut,
@@ -97,11 +100,11 @@ export class FifthPageComponent implements AfterViewInit {
             const tl3 = new TimelineMax();
             tl.to(this.slide3, 0, {
                 ease: Power3.easeOut,
-                marginLeft: '-80%',
+                marginLeft: '-160vw',
             });
             tl2.to(this.slide2, 2.2, {
                 ease: Power3.easeOut,
-                marginLeft: '80%',
+                marginLeft: '160vw',
             });
             tl3.to(this.slide1, 1.1, {
                 ease: Power3.easeOut,
